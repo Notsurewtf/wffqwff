@@ -11,9 +11,10 @@ function Execute-Silently {
 function Show-RoundedForm {
     $form = New-Object System.Windows.Forms.Form
     $form.Text = "Rounded GUI"
-    $form.Size = New-Object System.Drawing.Size(300, 200)
+    $form.Size = New-Object System.Drawing.Size(400, 200)  # Longer length than width
     $form.StartPosition = "CenterScreen"
     $form.FormBorderStyle = "None"
+    $form.TopMost = $true  # Keeps the form on top
 
     # Create a GraphicsPath for rounded corners
     $graphicsPath = New-Object System.Drawing.Drawing2D.GraphicsPath
@@ -28,18 +29,19 @@ function Show-RoundedForm {
     $label = New-Object System.Windows.Forms.Label
     $label.Text = "Hello World!"
     $label.AutoSize = $true
-    $label.Location = New-Object System.Drawing.Point(100, 80)
+    $label.Location = New-Object System.Drawing.Point(150, 80)  # Centering the label
     $label.Font = New-Object System.Drawing.Font("Arial", 14)
     $form.Controls.Add($label)
 
     # Add a Button to close the form
     $button = New-Object System.Windows.Forms.Button
     $button.Text = "Close"
-    $button.Location = New-Object System.Drawing.Point(100, 120)
+    $button.Location = New-Object System.Drawing.Point(150, 120)  # Centering the button
     $button.Add_Click({ $form.Close() })
     $form.Controls.Add($button)
 
-    $form.ShowDialog()
+    # Show the form non-modally
+    $form.Show()
 }
 
 # Path to the prefetch registry key
